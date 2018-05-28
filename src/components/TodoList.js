@@ -1,5 +1,6 @@
 import React from 'react';
 import '../style/todolist.scss';
+import '../enumerations/task-status.enumeration'
 
 export default class TodoList extends React.Component {
     constructor(props) {
@@ -10,7 +11,8 @@ export default class TodoList extends React.Component {
         }
 
         this.updateInputValue = this.updateInputValue.bind(this);
-        this.addItem = this.addItem.bind(this);
+        this.addTask = this.addTask.bind(this);
+        this.toggleStatus = this.toggleStatus.bind(this);
         this.renderTodoItems = this.renderTodoItems.bind(this);
     }
 
@@ -18,23 +20,45 @@ export default class TodoList extends React.Component {
         this.setState({inputValue: event.target.value});
     };
 
-    addItem(event) {
+    addTask(event) {
         event.preventDefault(); // prevents refreshing ?!
         if(this.state.inputValue === '') {
             return;
         }
 
+        const task = {
+            text: this.state.inputValue,
+            isDone: false
+        };
+
         this.setState({
-            arrayTodoItems: [...this.state.arrayTodoItems, this.state.inputValue],
+            arrayTodoItems: [...this.state.arrayTodoItems, task],
             inputValue: ''
         });
     };
+
+    toggleStatus(taskId) {
+        const newArray = this.state.arrayTodoItems;
+        newArray[taskId] = {
+            text: this.state.arrayTodoItems[taskId].text,
+            isDone: !this.state.arrayTodoItems[taskId].isDone
+        };
+
+        this.setState({
+            arrayTodoItems: newArray
+        });
+    }
 
     renderTodoItems() {
         return (
             <ol className='todo-items'>
                 {this.state.arrayTodoItems.map((item, id) => {
-                    return <li key={`item-${id}`}>{item}</li>
+                    return (
+                        <li key={`item-${id}`} className={item.isDone ? 'item--done' : ''}>
+                            <input type="checkbox" onClick={() => {this.toggleStatus(id)}}/>
+                            {item.text}
+                        </li>
+                    )
                 })}
             </ol>
         )
@@ -44,7 +68,7 @@ export default class TodoList extends React.Component {
         return (
             <div className='todo-list'>
                 {this.renderTodoItems()}
-                <form onSubmit={this.addItem}>
+                <form onSubmit={this.addTask}>
                     <input
                         type='text'
                         value={this.state.inputValue}
