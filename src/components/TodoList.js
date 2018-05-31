@@ -1,6 +1,5 @@
 import React from 'react';
 import '../style/todolist.scss';
-import '../enumerations/task-status.enumeration'
 
 export default class TodoList extends React.Component {
     constructor(props) {
@@ -8,7 +7,7 @@ export default class TodoList extends React.Component {
         this.state = {
             inputValue: '',
             arrayTodoItems: []
-        }
+        };
 
         this.updateInputValue = this.updateInputValue.bind(this);
         this.addTask = this.addTask.bind(this);
@@ -37,11 +36,11 @@ export default class TodoList extends React.Component {
         });
     };
 
-    toggleStatus(taskId) {
+    toggleStatus(taskIndex) {
         const newArray = this.state.arrayTodoItems;
-        newArray[taskId] = {
-            text: this.state.arrayTodoItems[taskId].text,
-            isDone: !this.state.arrayTodoItems[taskId].isDone
+        newArray[taskIndex] = {
+            text: this.state.arrayTodoItems[taskIndex].text,
+            isDone: !this.state.arrayTodoItems[taskIndex].isDone
         };
 
         this.setState({
@@ -52,10 +51,10 @@ export default class TodoList extends React.Component {
     renderTodoItems() {
         return (
             <ol className='todo-items'>
-                {this.state.arrayTodoItems.map((item, id) => {
+                {this.state.arrayTodoItems.map((item, index) => {
                     return (
-                        <li key={`item-${id}`} className={item.isDone ? 'item--done' : ''}>
-                            <input type="checkbox" onClick={() => {this.toggleStatus(id)}}/>
+                        <li key={`item-${index}`} className={item.isDone ? 'item--done' : ''}>
+                            <input type="checkbox" onClick={() => {this.toggleStatus(index)}}/>
                             {item.text}
                         </li>
                     )
