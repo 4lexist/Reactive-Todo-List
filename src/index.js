@@ -5,7 +5,6 @@ import { createStore } from 'redux'
 import todoApp from './reducers/todo.reducers'
 import App from './containers/App.js';
 
-console.log("todoApp", todoApp)
 const store = createStore(todoApp);
 
 render(

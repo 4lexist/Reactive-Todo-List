@@ -5,7 +5,6 @@ const initialState = {
 };
 
 function addTodo(state, action) {
-    console.log(state)
     return Object.assign({}, state, {
         todos: [
             ...state.todos,
@@ -20,7 +19,6 @@ function addTodo(state, action) {
 function toggleTodo(state, action) {
     return Object.assign({}, state, {
         todos: state.todos.map((todo, index) => {
-            console.log(index, action)
             if (index === action.payload.index) {
                 return Object.assign({}, todo, {
                     isDone: !todo.isDone

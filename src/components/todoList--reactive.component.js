@@ -1,7 +1,7 @@
 import React from 'react';
 import '../style/todolist.scss';
 
-import Input from "../components/Input";
+import Input from "../components/input.component";
 
 export default class TodoListReactive extends React.Component {
     constructor(props) {
@@ -32,7 +32,6 @@ export default class TodoListReactive extends React.Component {
     };
 
     render() {
-        console.log("this.props", this.props)
         return (
             <div className='todo-list'>
                 {this.renderTodoItems()}

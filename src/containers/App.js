@@ -1,6 +1,7 @@
 import React from 'react';
-import TodoList from '../components/TodoList';
-import TodoListReactive from '../containers/TodoList.containers'
+import TodoList from '../components/todoList.component';
+import WhoToFollow from '../components/whoToFollow.component';
+import TodoListReactive from '../containers/todoList.container'
 import '../style/app.scss';
 
 export default class App extends React.Component {
@@ -12,6 +13,8 @@ export default class App extends React.Component {
                 <hr/>
                 <h1>[reactive]Todo List</h1>
                 <TodoListReactive/>
+                <hr/>
+                <WhoToFollow/>
             </div>
         )
     }

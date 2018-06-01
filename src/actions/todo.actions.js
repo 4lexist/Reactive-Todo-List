@@ -43,7 +43,6 @@ export function inputSubmitAction(inputValue) {
 
 export const ADD_TODO = 'ADD_TODO';
 export function addTodo(inputValue) {
-    console.log('actions')
     return {
         type: ADD_TODO,
         payload: {

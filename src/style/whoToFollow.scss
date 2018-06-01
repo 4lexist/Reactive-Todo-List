@@ -1,0 +1,27 @@
+.suggestions {
+  &>.suggestion {
+    display: flex;
+    margin: 10px 0;
+    &>img {
+      width: 100px;
+      height: 100px;
+      border-radius: 25%;
+    }
+    &>p {
+      align-self: center;
+      font-size: 20px;
+      margin: 5px;
+    }
+    &>a {
+      align-self: center;
+      font-size: 20px;
+    }
+
+    &>.close {
+      border: solid 1px;
+      border-radius: 50%;
+      cursor: pointer;
+      padding: 1px 5px;
+    }
+  }
+}

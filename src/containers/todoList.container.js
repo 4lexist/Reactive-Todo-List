@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import * as Actions from '../actions'
-import TodoListReactive from "../components/TodoList--reactive";
+import TodoListReactive from "../components/todoList--reactive.component";
 
 const mapStateToProps = state => {
     return {
