@@ -1,14 +1,4 @@
-/* Asynchronous */
-export const INPUT_SUBMIT_ACTION_ATTEMPT = 'INPUT_SUBMIT_ACTION_ATTEMPT';
-export function inputSubmitActionAttempt(inputValue) {
-    return {
-        type: INPUT_SUBMIT_ACTION_ATTEMPT,
-        payload: {
-            inputValue
-        }
-    };
-}
-
+/* Asynchronous - going to be caught via epics */
 export const ADD_TODO_ATTEMPT = 'ADD_TODO_ATTEMPT';
 export function addTodoAttempt(inputValue) {
     return {
@@ -30,17 +20,7 @@ export function toggleTodoAttempt(index) {
 }
 
 
-/* Synchrone */
-export const INPUT_SUBMIT_ACTION = 'INPUT_SUBMIT_ACTION';
-export function inputSubmitAction(inputValue) {
-    return {
-        type: INPUT_SUBMIT_ACTION,
-        payload: {
-            inputValue
-        }
-    };
-}
-
+/* Synchronous - caught directly in reducer */
 export const ADD_TODO = 'ADD_TODO';
 export function addTodo(inputValue) {
     return {

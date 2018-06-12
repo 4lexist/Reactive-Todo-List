@@ -34,7 +34,7 @@ export default class WhoToFollow extends React.Component {
             });
 
         responseStream.subscribe((usersPromise) => {
-            return usersPromise.json()
+            usersPromise.json()
                 .then((users) => {
                     const usersArray = users.map(function(user){
                         return {

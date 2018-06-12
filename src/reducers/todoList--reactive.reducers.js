@@ -32,9 +32,9 @@ function toggleTodo(state, action) {
 export default (state = initialState, action) => {
     switch(action.type){
         case Actions.ADD_TODO_ATTEMPT:
-            break;
+            return state;
         case Actions.TOGGLE_TODO_ATTEMPT:
-            break;
+            return state;
         case Actions.ADD_TODO:
             return addTodo(state, action);
         case Actions.TOGGLE_TODO:

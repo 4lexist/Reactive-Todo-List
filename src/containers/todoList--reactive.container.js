@@ -11,10 +11,10 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         toggleTodoStatus: index => {
-            dispatch(Actions.toggleTodo(index))
+            dispatch(Actions.toggleTodoAttempt(index))
         },
         addTodo: text => {
-            dispatch(Actions.addTodo(text))
+            dispatch(Actions.addTodoAttempt(text))
         }
     }
 };

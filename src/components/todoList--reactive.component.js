@@ -12,7 +12,7 @@ export default class TodoListReactive extends React.Component {
     }
 
     addTask(taskText) {
-        event.preventDefault(); // prevents refreshing ?!
+        event.preventDefault(); // prevents refreshing
         this.props.addTodo(taskText);
     };
 
