@@ -1,9 +1,8 @@
 import React from 'react';
 import '../style/todolist.scss';
+import { Input } from "../components";
 
-import Input from "../components/input.component";
-
-export default class TodoListReactive extends React.Component {
+export class TodoListReactive extends React.Component {
     constructor(props) {
         super(props);
 
@@ -13,6 +12,7 @@ export default class TodoListReactive extends React.Component {
 
     addTask(taskText) {
         event.preventDefault(); // prevents refreshing
+        console.log(this.props.addTodo)
         this.props.addTodo(taskText);
     };
 
@@ -43,6 +43,6 @@ export default class TodoListReactive extends React.Component {
 
 TodoListReactive.defaultProps = {
     todos: [],
-    toggleTodo: () => {},
+    toggleTodoStatus: () => {},
     addTodo: () => {}
 };

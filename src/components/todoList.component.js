@@ -1,7 +1,7 @@
 import React from 'react';
 import '../style/todolist.scss';
 
-export default class TodoList extends React.Component {
+export class TodoList extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -20,7 +20,7 @@ export default class TodoList extends React.Component {
     };
 
     addTask(event) {
-        event.preventDefault(); // prevents refreshing ?!
+        event.preventDefault(); // prevents page refreshing
         if(this.state.inputValue === '') {
             return;
         }

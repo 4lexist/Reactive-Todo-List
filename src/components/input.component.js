@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class Input extends React.Component {
+export class Input extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -16,7 +16,7 @@ export default class Input extends React.Component {
     };
 
     onSubmit(event) {
-        event.preventDefault(); // prevents refreshing ?!
+        event.preventDefault(); // prevents page refreshing
         if(this.state.inputValue === ''){
             return;
         }
@@ -43,3 +43,7 @@ export default class Input extends React.Component {
         )
     }
 }
+
+Input.defaultProps = {
+    onSubmit: (inputValue) => {}
+};

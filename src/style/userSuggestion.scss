@@ -1,0 +1,52 @@
+.container {
+  border: solid;
+  max-width: 500px;
+  padding: 0 10px;
+  width: 95%;
+
+  &>.header {
+    display: flex;
+    position: relative;
+
+    &>.refresh {
+      align-self: center;
+      border: solid 2px;
+      border-radius: 15%;
+      padding: 3px;
+      position: absolute;
+      right: 10px;
+      text-decoration: none;
+    }
+  }
+
+  .suggestions {
+    &>.suggestion {
+      display: flex;
+      margin: 10px 0;
+
+      &>img {
+        width: 100px;
+        height: 100px;
+        border-radius: 25%;
+      }
+
+      &>p {
+        align-self: center;
+        font-size: 20px;
+        margin: 5px;
+      }
+
+      &>a {
+        align-self: center;
+        font-size: 20px;
+      }
+
+      &>.close {
+        border: solid 1px;
+        border-radius: 50%;
+        cursor: pointer;
+        padding: 1px 5px;
+      }
+    }
+  }
+}

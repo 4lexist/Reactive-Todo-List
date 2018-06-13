@@ -5,7 +5,7 @@ import { createStore, applyMiddleware } from 'redux';
 import { createEpicMiddleware } from 'redux-observable';
 
 import todoApp from './reducers/todoList--reactive.reducers'
-import App from './containers/App.js';
+import App from './components/App.js';
 import rootEpic from './epics/todoList--reactive.epics'
 
 const epicMiddleware = createEpicMiddleware(rootEpic);

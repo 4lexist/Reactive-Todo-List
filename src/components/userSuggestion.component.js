@@ -3,9 +3,9 @@ import React from 'react';
 import { Observable } from 'rxjs';
 
 import 'whatwg-fetch';
-import '../style/whoToFollow.scss';
+import '../style/userSuggestion.scss';
 
-export default class WhoToFollow extends React.Component {
+export class UserSuggestion extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
